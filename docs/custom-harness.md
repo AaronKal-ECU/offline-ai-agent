@@ -2,7 +2,31 @@
 
 The custom audit assistant is stock DeepSeek Harness plus **six plugins** and a profile. No fork, no edits to DSH itself: everything is layered on through DSH's plugin system. It was built as a demo during my internship at Eloize and never deployed, and the code is published here as a reference.
 
-![Custom DSH audit assistant](images/eloize-home.png)
+| Stock DeepSeek Harness | Same harness, six plugins later |
+|---|---|
+| ![Stock DSH](images/dsh-stock.png) | ![Custom DSH audit assistant](images/eloize-home.png) |
+
+## Everything is a plugin
+
+DeepSeek Harness is built on [Cordis](https://github.com/cordiverse/cordis), a framework where **everything is a plugin** ([paper](https://arxiv.org/abs/2608.25512)). That isn't only the add-ons: the agent loop, the tools, subagents, the terminal, model routing, even the logo in the sidebar are all plugins, loaded into one tree at startup.
+
+That one design choice is what makes a harness like this customisable:
+
+- **Add anything.** A new tool, button, panel or agent behaviour is just another plugin in the tree.
+- **Remove or replace anything.** Because the built-in parts are plugins too, you can switch one off and put your own in its place. The custom assistant does exactly this: the stock branding plugin is disabled, and `dsh-branding` takes its slot.
+- **Change behaviour without touching code you don't own.** Plugins talk through shared events. Before every model call, DSH fires an `agent/request` event, and any plugin can rewrite it. That's how confidential mode forces requests to the local model without a single edit to DSH itself.
+- **Reconfigure with a text file.** Which plugins load, and with what settings, is a YAML list. Delete a line and that feature is gone.
+- **Hot reload.** Edit the plugin list or a plugin, and the running harness picks it up without a restart.
+
+There are three ways to customise it, from easiest to most control:
+
+| | How | Good for |
+|---|---|---|
+| **Plugin manager** | Install official or [community plugins](https://github.com/topics/dsh-plugin) from the UI | Adding ready-made features |
+| **Creator mode** | Describe a plugin in chat, and the agent writes and installs it for you | Quick personal tools |
+| **Write your own** | A package with a host half (`lib/index.js`) and/or a browser half (`lib/client.js`), switched on in a profile | Full products, like this one |
+
+The custom assistant uses the third route. Everything below is how those six plugins are put together. For DSH's own guide, see the [developer docs](https://deepseek-harness.github.io/deepseek-harness/en/guide/quickstart).
 
 ## Profiles: two instances, one install
 
