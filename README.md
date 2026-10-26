@@ -10,8 +10,6 @@ This repo is two things:
 1. **A getting-started guide to local AI:** what you need, and how to get a model running on your own PC with no cloud needed.
 2. **A brief overview of AI harnesses and building custom tools for AI to use**, using DeepSeek Harness to build a purpose-built AI assistant with its own custom tools.
 
-[Full walkthrough of the custom AI harness I made and the problems it solves](https://www.youtube.com/watch?v=NwEOs_hetQo)
-
 ---
 
 ## Most businesses that want AI hit the same wall: you can't paste client data into a cloud chatbot.
@@ -103,7 +101,9 @@ Both run from the same DSH install and share one session store, but each boots i
 
 I built a branded, workflow-specific version of DSH during my internship at Eloize, an AI and automation agency. It turned the stock harness into an **audit assistant**: "Create audit" instead of "New project", a one-click transcript upload, and a confidential mode. It was built as a demo for my internship to show my skills, and was never deployed. The [plugin code](plugins) is included if you'd like to look under the hood.
 
-[Ideas for further tools to bolt onto the custom harness are covered in this short video.](https://www.youtube.com/watch?v=oSaomaeyFCY) Watch it to further understand the types of things you can do with this technology: make custom tools to solve specific problems you face, and add these tools directly into your AI workflow at the harness level.
+▶ [Full walkthrough of the assistant and the problems it solves](https://www.youtube.com/watch?v=NwEOs_hetQo)
+
+▶ [Ideas for further tools to bolt onto the custom harness are covered in this short video.](https://www.youtube.com/watch?v=oSaomaeyFCY) Watch it to further understand the types of things you can do with this technology: make custom tools to solve specific problems you face, and add these tools directly into your AI workflow at the harness level.
 
 ---
 
@@ -117,7 +117,6 @@ Flip the switch and the assistant becomes **local model only**:
 - Every model request from a confidential session is **rewritten at the harness level** to Ollama/Qwen3. It's the last word on routing, so no other setting or plugin can send it to the cloud. If the check itself errors, the request fails rather than slipping through.
 - **Zero tools** and a slim system prompt: the model can only answer, never execute anything.
 - No background calls: no auto-titles, no summaries.
-[More info about its features here](https://www.youtube.com/watch?v=NwEOs_hetQo)
 
 **→ [How the custom harness is built](docs/custom-harness.md)**: profiles, the plugin layer, the six plugins, and how they were tested.
 
@@ -138,7 +137,6 @@ It's a multi-pass pipeline, because one LLM pass alone isn't reliable enough for
 3. **Name sweep:** a second call asks the model to *list* any names or companies still visible, as JSON forced by a schema. Those, plus a bundled first-names list, are swept out deterministically (up to three passes).
 4. **Number backstop:** a regex replaces any 8+ digit run (ABNs, account and phone numbers the model missed) with `[ID]`, while leaving prices like `$1,420,000` alone.
 5. **Save:** the clean `.md` lands in the audit's folder and opens beside the chat.
-[More info about its features here](https://www.youtube.com/watch?v=NwEOs_hetQo)
 
 Full breakdown with a before/after, and how to use it beyond transcripts: **→ [Client data stripper](docs/client-data-stripper.md)**
 
