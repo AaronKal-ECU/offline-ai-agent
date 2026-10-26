@@ -156,7 +156,7 @@ A model on its own can only produce text. A **harness** is the code around it th
 
 
 > [!TIP]
-> Want the bigger picture on harnesses? [You Don't Own Your AI. The Harness Does.](https://www.youtube.com/watch?v=k8jYOcQUB_A) by Manolo Remiddi explains why the harness matters as much as the model.
+> Want the bigger picture on harnesses? [You Don't Own Your AI. The Harness Does.](https://www.youtube.com/watch?v=k8jYOcQUB_A) by Manolo Remiddi explains why the harness matters as much as the model, and [AI harness crash course](https://www.youtube.com/watch?v=2C_CefSQEAQ) by Google Cloud Tech is a good starting point.
 
 ---
 
@@ -171,6 +171,7 @@ A model on its own can only produce text. A **harness** is the code around it th
 
 **Understanding harnesses and DSH**
 - [You Don't Own Your AI. The Harness Does.](https://www.youtube.com/watch?v=k8jYOcQUB_A) by Manolo Remiddi
+- [AI harness crash course](https://www.youtube.com/watch?v=2C_CefSQEAQ) by Google Cloud Tech
 - [DSH the AI Harness Where Everything Is a Plugin](https://www.youtube.com/watch?v=rvdnywaXZWU) by Manolo Remiddi
 - [Why DeepSeek Harness Just Became The Fastest Growing Github Repo EVER](https://www.youtube.com/watch?v=f51ICIoHcjY) by Chase AI
 - [DeepSeek Harness Just Changed AI Forever](https://www.youtube.com/watch?v=DTu4yvmc0Fc) by Better Stack

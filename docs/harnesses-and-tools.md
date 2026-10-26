@@ -30,7 +30,7 @@ sequenceDiagram
 The model never touches your files or systems directly. It only *asks*; the harness decides what actually runs. That's where your control lives.
 
 > [!TIP]
-> **What's a harness, and why does it matter?** [You Don't Own Your AI. The Harness Does.](https://www.youtube.com/watch?v=k8jYOcQUB_A) by Manolo Remiddi explains it in plain terms.
+> **What's a harness, and why does it matter?** [You Don't Own Your AI. The Harness Does.](https://www.youtube.com/watch?v=k8jYOcQUB_A) by Manolo Remiddi explains it in plain terms, and [AI harness crash course](https://www.youtube.com/watch?v=2C_CefSQEAQ) by Google Cloud Tech gives the overview.
 
 ## Why build on your own harness
 
