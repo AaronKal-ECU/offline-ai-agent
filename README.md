@@ -111,6 +111,7 @@ Flip the switch and the assistant becomes **local model only**:
 - Every model request from a confidential session is **rewritten at the harness level** to Ollama/Qwen3. It's the last word on routing, so no other setting or plugin can send it to the cloud. If the check itself errors, the request fails rather than slipping through.
 - **Zero tools** and a slim system prompt: the model can only answer, never execute anything.
 - No background calls: no auto-titles, no summaries.
+[More info about its features here](https://www.youtube.com/watch?v=NwEOs_hetQo)
 
 **→ [How the custom harness is built](docs/custom-harness.md)**: profiles, the plugin layer, the six plugins, and how they were tested.
 
@@ -129,6 +130,7 @@ It's a multi-pass pipeline, because one LLM pass alone isn't reliable enough for
 3. **Name sweep:** a second call asks the model to *list* any names or companies still visible, as JSON forced by a schema. Those, plus a bundled first-names list, are swept out deterministically (up to three passes).
 4. **Number backstop:** a regex replaces any 8+ digit run (ABNs, account and phone numbers the model missed) with `[ID]`, while leaving prices like `$1,420,000` alone.
 5. **Save:** the clean `.md` lands in the audit's folder and opens beside the chat.
+[More info about its features here](https://www.youtube.com/watch?v=NwEOs_hetQo)
 
 Full breakdown with a before/after, and how to use it beyond transcripts: **→ [Client data stripper](docs/client-data-stripper.md)**
 
