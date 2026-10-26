@@ -57,6 +57,10 @@ Three layers, and you own all of them:
 2. **The runtime:** [Ollama](https://ollama.com) loads the model onto the GPU and serves it on `localhost`, so it behaves like any AI API, except the "server" is your own PC.
 3. **The harness:** [DeepSeek Harness (DSH)](https://www.deepseek.com/en/harness/) is the agent layer: chat UI, sessions, tools, and a plugin system. It's pointed at Ollama, so the local model shows up in the model picker next to the cloud ones.
 
+![Stock DeepSeek Harness answering a prompt](docs/images/dsh-demo.gif)
+
+*Stock DeepSeek Harness: one prompt, three tool calls, a written answer.*
+
 ---
 
 ## The rig
@@ -105,7 +109,9 @@ I built a branded, workflow-specific version of DSH during my internship at Eloi
 
 ## Confidential mode: local-only chat
 
-![Confidential mode](docs/images/confidential-mode.png)
+![Confidential mode: switching to local-only and asking for live weather](docs/images/confidential-mode.gif)
+
+*Switching on confidential mode and asking for today's weather. With no tools and no internet access, the local model says it can't check, instead of making something up.*
 
 Flip the switch and the assistant becomes **local model only**:
 - Every model request from a confidential session is **rewritten at the harness level** to Ollama/Qwen3. It's the last word on routing, so no other setting or plugin can send it to the cloud. If the check itself errors, the request fails rather than slipping through.
@@ -119,7 +125,9 @@ Flip the switch and the assistant becomes **local model only**:
 
 ## Transcript scrubber: strips client data from files on the local model
 
-![Transcript scrubbed on the local model](docs/images/transcript-scrubber.png)
+![Uploading a transcript and getting the cleaned copy back](docs/images/scrubber-demo.gif)
+
+*Upload a transcript, the local model cleans it, and the redacted copy opens beside the chat.*
 
 Drop in a meeting transcript and the **local** model strips every identity out of it before anything else happens. Only the cleaned copy is saved and used. You get frontier cloud models working on your client's problems without ever handing them your client's data.
 

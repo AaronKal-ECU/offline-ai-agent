@@ -8,11 +8,15 @@ It was built for client audit transcripts, but transcripts are just the demo. Th
 
 Source: [`plugins/dsh-transcript`](../plugins/dsh-transcript/lib/client.js)
 
-![Transcript scrubbed on the local model](images/transcript-scrubber.png)
+![Transcript cleaned and saved to the audit folder](images/scrubber-result.png)
+
+*A real run: the cleaned transcript opens on the right, with names replaced by `[NAME]`, and a notes summary is built from it on the left.*
 
 ---
 
 ## Before and after
+
+![Synthetic transcript scrubbed on the local model](images/transcript-scrubber.png)
 
 A synthetic transcript; every name, number and business in it is made up. [Input](../examples/synthetic-transcript.txt) → [output](../examples/synthetic-transcript-clean.md).
 

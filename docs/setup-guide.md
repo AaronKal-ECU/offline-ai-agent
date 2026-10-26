@@ -63,6 +63,8 @@ ollama launch dsh
 
 It prints a local URL and opens the UI in your browser. Your local models are in the model picker. [`configs/dsh/settings.example.yaml`](../configs/dsh/settings.example.yaml) shows the config this generates: DSH talks to Ollama's OpenAI-compatible endpoint at `http://127.0.0.1:11434/v1`, so every request stays on your machine.
 
+![Stock DeepSeek Harness](images/dsh-stock.png)
+
 ## 4. Run a second, custom instance (optional)
 
 DSH **profiles** let you run a separate instance with its own plugins on its own port, sharing the same install:
