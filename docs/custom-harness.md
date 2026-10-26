@@ -110,4 +110,4 @@ See [`plugins/README.md`](../plugins/README.md). In short: create a profile, lin
 
 ## How it was tested
 
-Each change was checked with a Playwright verification suite driving the live UI, plus Node smoke tests for the harness side: 27 node checks, 65 client checks and 158 behaviour checks for confidential mode alone, across 11 harnesses. The suite isn't included here, but it's why the changelogs at the top of each `client.js` read the way they do: every "generation" is a fix pass found by a failing check.
+Each change was checked with a Playwright suite driving the live UI, plus Node smoke tests for the harness side. Confidential mode alone had 250 checks: 27 on the node half, 65 on the client half and 158 behaviour checks. The suite isn't included in this repo, so those numbers are my own record rather than something you can rerun. It's also why the changelogs at the top of each `client.js` read the way they do: every "generation" is a fix pass found by a failing check.
