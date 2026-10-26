@@ -28,6 +28,9 @@ There are three ways to customise it, from easiest to most control:
 
 The custom assistant uses the third route. Everything below is how those six plugins are put together. For DSH's own guide, see the [developer docs](https://deepseek-harness.github.io/deepseek-harness/en/guide/quickstart).
 
+> [!TIP]
+> **Learn the plugin system:** [DeepSeek Harness Plugins Explained (Cordis Full Guide)](https://www.youtube.com/watch?v=APhQxIKKq0g) by DevsKingdom goes deep on plugins and Cordis. For a gentler start, [Caleb Curry's crash course from 34:26](https://www.youtube.com/watch?v=legYz3Hk2rQ&t=2066s) covers DSH's setup and customisation in plain terms.
+
 ## Profiles: two instances, one install
 
 DSH boots from a **profile**: a folder with a `package.json` listing base bundles and a `cordis.patch.yml` that adds, removes or reconfigures plugins.

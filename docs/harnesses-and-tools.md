@@ -29,6 +29,9 @@ sequenceDiagram
 
 The model never touches your files or systems directly. It only *asks*; the harness decides what actually runs. That's where your control lives.
 
+> [!TIP]
+> Two videos that explain harnesses well: [AI harness crash course](https://www.youtube.com/watch?v=2C_CefSQEAQ) by Google Cloud Tech for the overview, and [Agent Harness explained in 8min..](https://www.youtube.com/watch?v=1a1VXDdIyrk&t=245s) by Caleb Writes Code (from 4:05) for the more technical side.
+
 ## Why build on your own harness
 
 - **You choose every capability.** The agent can do exactly what you've built, and nothing more. You can also take capabilities *away*, which matters as much for a business.
@@ -74,6 +77,9 @@ Because the override runs *after* the rest of the chain, no setting or other plu
 - **Constrain the output.** The transcript scrubber forces JSON with a schema rather than hoping the model formats it right.
 - **Temperature 0 and thinking off** for mechanical jobs like redaction: you want consistency, not creativity.
 - **Never trust one pass for anything safety-critical.** Back the model up with deterministic code (see the [transcript scrubber](client-data-stripper.md)).
+
+> [!TIP]
+> To see a full harness in action, [DeepSeek Harness Agentic AI Crash Course (Run Any AI Model)](https://www.youtube.com/watch?v=legYz3Hk2rQ) by Caleb Curry covers DSH end to end.
 
 ## Next
 

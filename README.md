@@ -61,6 +61,10 @@ Three layers, and you own all of them:
 
 *Stock DeepSeek Harness: one prompt, three tool calls, a written answer. ▶ [Watch the clip](https://youtu.be/lT6YhD8X6hU)*
 
+
+> [!TIP]
+> **New to DeepSeek Harness?** [DeepSeek Harness Agentic AI Crash Course (Run Any AI Model)](https://www.youtube.com/watch?v=legYz3Hk2rQ) by Caleb Curry is the best plain-English walkthrough of what DSH is and how to use it.
+
 ---
 
 ## The rig
@@ -149,6 +153,10 @@ Full breakdown with a before/after, and how to use it beyond transcripts: **→ 
 A model on its own can only produce text. A **harness** is the code around it that lets it *do* things: it describes the available tools to the model, runs the tools the model asks for, feeds results back, and loops until the task is done. Building your own harness plugins is how a general model becomes a specific product, with total control over what it can touch.
 
 **→ [Harnesses and tools explained](docs/harnesses-and-tools.md)**
+
+
+> [!TIP]
+> Want the bigger picture on harnesses? [AI harness crash course](https://www.youtube.com/watch?v=2C_CefSQEAQ) by Google Cloud Tech is a good starting point.
 
 ---
 
