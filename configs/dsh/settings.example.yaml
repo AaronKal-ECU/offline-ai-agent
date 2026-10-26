@@ -1,0 +1,41 @@
+# DSH settings that point the harness at local Ollama models.
+#
+# `ollama launch dsh` generates a file like this for you (it lives under
+# ~/.ollama/launch/dsh/settings.yaml) and boots DSH with it as an overlay.
+# Shown here so you can see exactly how the harness talks to the local model:
+# Ollama's OpenAI-compatible endpoint on localhost. Nothing in this block
+# leaves the machine.
+
+agent-default-model:
+    provider: ollama
+    model: Qwen3-8B-Q6_K:latest      # local model is the default
+    reasoningEffort: high
+
+llm-pi-ai:
+    providers:
+        ollama:
+            displayName: Ollama
+            api: openai-completions
+            baseURL: http://127.0.0.1:11434/v1
+            apiKeyEnv: OLLAMA_LAUNCH_DSH_API_KEY   # Ollama ignores the key; DSH needs the field
+            models:
+                - id: Qwen3-8B-Q6_K:latest
+                  name: Qwen3-8B-Q6_K:latest
+                  contextWindow: 40960
+                  input: [text]
+                - id: Qwen3-8B-Q6_K-nothink:latest
+                  name: Qwen3-8B-Q6_K-nothink:latest
+                  contextWindow: 40960
+                  input: [text]
+                # Optional: Ollama Cloud models appear the same way, with a
+                # `:cloud` suffix. These DO leave the machine.
+                # - id: deepseek-v4.1-flash:cloud
+                #   name: deepseek-v4.1-flash:cloud
+                #   contextWindow: 1048576
+                #   input: [text]
+
+# DSH's web-search tool, routed to the local model too.
+web-search-deepseek:
+    apiKeyEnv: OLLAMA_LAUNCH_DSH_API_KEY
+    baseURL: http://127.0.0.1:11434/v1
+    model: Qwen3-8B-Q6_K:latest

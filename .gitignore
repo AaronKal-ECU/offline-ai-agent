@@ -1,0 +1,21 @@
+# Secrets
+.env
+.env.*
+*.key
+.credentials.yaml
+id_ed25519*
+
+# Models (too large for git)
+*.gguf
+*.safetensors
+
+# Harness sessions and logs
+sessions/
+*.log
+
+# Dependencies
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db

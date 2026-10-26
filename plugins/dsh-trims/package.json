@@ -1,0 +1,30 @@
+{
+  "name": "@eloize/dsh-trims",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Eloize demo UI trims: hides the chat box's + button, access dropdown and mode dropdown in both modes. Presentation only - no plugin behind these controls is disabled.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ],
+      "immediately": true
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2"
+  }
+}

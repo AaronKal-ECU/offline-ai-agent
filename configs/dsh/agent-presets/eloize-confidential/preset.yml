@@ -1,0 +1,4 @@
+name: Confidential
+description: >-
+  Eloize Confidential mode: local Qwen3 chat, zero tools, slim system prompt.
+  Everything stays on this machine.

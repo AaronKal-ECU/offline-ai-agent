@@ -1,5 +1,5 @@
 # offline-ai-agent
-Aaron Mark Kalaji 27/10/26
+*Aaron Mark Kalaji · 27 Oct 2026*
 
 **Private AI you fully control. The model runs on your own hardware, and when it matters, nothing leaves the machine.**
 
@@ -7,10 +7,10 @@ This is my local AI lab: a Windows PC with an RTX 3060 running Qwen3 8B through 
 
 This repo is two things:
 
-1. **A getting-started guide to local AI:** what you need, and how to get a model running on your own PC without any cloud dependancies!
-2. **A brief overview of AI harnesses and building custom tools for AI to use**, using the DeepSeek Harness I built a AI that is built for a specific purpose, and has custom tools to help complete its tasks.
+1. **A getting-started guide to local AI:** what you need, and how to get a model running on your own PC with no cloud needed.
+2. **A brief overview of AI harnesses and building custom tools for AI to use**, using DeepSeek Harness to build a purpose-built AI assistant with its own custom tools.
 
-[Full walkthrough of the custom AI harness I made and the problems it solves](https://www.youtube.com/watch?v=NwEOs_hetQo) 
+[Full walkthrough of the custom AI harness I made and the problems it solves](https://www.youtube.com/watch?v=NwEOs_hetQo)
 
 ---
 
@@ -24,13 +24,13 @@ Local AI flips that:
 |---|---|---|
 | Where your data goes | The provider's servers | Nowhere. It stays on your machine |
 | Needs internet to think | Yes | No |
-| Cost | Subscription or per-token | no subscription, free to run just pay electricity! |
-| Who controls the model | The provider (they can change or retire it) | You. all levels, all on your own computer |
-| Who decides what it can do | The provider's product team | You can build your own tools to suit your specific needs |
+| Cost | Subscription or per-token | No subscription, just electricity |
+| Who controls the model | The provider (they can change or retire it) | You. It's a file on your own computer |
+| Who decides what it can do | The provider's product team | You, by building your own tools |
 
 As we head into 2027, You don't need a data centre to run AI anymore, **This document walks through how I ran AI that can replace chatGPT on a less than 1000 dollar computer**, follow along so you can learn how to aswell!
 
-And you don't have to give up cloud models either. The setup here uses both, with the **local model AI that can be used to handle private tasks or client data, and you can still tap into your main cloud models (like ChatGPT and Claude) in the same system!
+And you don't have to give up cloud models either. The setup here uses both, with the **local model AI that can be used to handle private tasks or client data**, and you can still tap into your main cloud models (like ChatGPT and Claude) in the same system!
 
 ---
 
@@ -67,7 +67,7 @@ Three layers, and you own all of them:
 | CPU | AMD Ryzen 5 1600 (6-core, 3.2 GHz) |
 | RAM | 16 GB DDR4-3000 |
 | OS | Windows 11 Pro |
-| Local model | `Qwen3-8B-Q6_K`
+| Local model | `Qwen3-8B-Q6_K` |
 | Runtime | Ollama |
 | Agent harness | DeepSeek Harness (DSH), two instances side by side |
 | In daily use | Since September 2026 |
@@ -93,17 +93,17 @@ Both run from the same DSH install and share one session store, but each boots i
 
 ---
 
-## Custom AI Assistant built through DeepSeek Harness 
+## A custom AI assistant built on DeepSeek Harness
 
 ![Custom DSH audit assistant](docs/images/eloize-home.png)
 
-I built a branded, workflow-specific version of DSH during my internship at Eloize, an AI and automation agency. It turned the stock harness into an **audit assistant**: "Create audit" instead of "New project", a one-click transcript upload, and a confidential mode. It was built as a demo for my internship to display my skills but it was never deployed. The [plugin code](plugins) are included in this repo if you'd like to take a look at the code. 
+I built a branded, workflow-specific version of DSH during my internship at Eloize, an AI and automation agency. It turned the stock harness into an **audit assistant**: "Create audit" instead of "New project", a one-click transcript upload, and a confidential mode. It was built as a demo for my internship to show my skills, and was never deployed. The [plugin code](plugins) is included if you'd like to look under the hood.
 
-[Ideas for further tools to bolt onto the custom harness are covered in this short video.](https://www.youtube.com/watch?v=oSaomaeyFCY) Watch it to further understand the types of things you can do with this technology: make custom tools to solve speicifc problems you face, and add these tools directly into your AI workflow at the harness level. 
+[Ideas for further tools to bolt onto the custom harness are covered in this short video.](https://www.youtube.com/watch?v=oSaomaeyFCY) Watch it to further understand the types of things you can do with this technology: make custom tools to solve specific problems you face, and add these tools directly into your AI workflow at the harness level.
 
 ---
 
-## Transcript scrubber tool, it removes client data from files with a local AI model
+## Transcript scrubber: strips client data from files on the local model
 
 ![Transcript scrubbed on the local model](docs/images/transcript-scrubber.png)
 
@@ -117,11 +117,11 @@ It's a multi-pass pipeline, because one LLM pass alone isn't reliable enough for
 4. **Number backstop:** a regex replaces any 8+ digit run (ABNs, account and phone numbers the model missed) with `[ID]`, while leaving prices like `$1,420,000` alone.
 5. **Save:** the clean `.md` lands in the audit's folder and opens beside the chat.
 
-Full breakdown with a before/after on a synthetic transcript: **→ [Transcript scrubber](docs/client-data-stripper.md)**
+Full breakdown with a before/after, and how to use it beyond transcripts: **→ [Client data stripper](docs/client-data-stripper.md)**
 
 ---
 
-## Offline chatting tool, talk to local AI with no internet
+## Confidential mode: local-only chat
 
 ![Confidential mode](docs/images/confidential-mode.png)
 
@@ -144,7 +144,7 @@ A model on its own can only produce text. A **harness** is the code around it th
 
 ## About
 
-Built by **Aaron Kalaji**, a Software Engineering student at Edith Cowan University (Perth, WA) and founder of **Kaltec**. Passion for engineering fabrication and automation. contact kalteclabs@gmail.com for inquiries. 
+Built by **Aaron Kalaji**, a Software Engineering student at Edith Cowan University (Perth, WA) and founder of **Kaltec**. Passionate about engineering, fabrication and automation. For enquiries: kalteclabs@gmail.com
 
 ## License
 

@@ -1,0 +1,27 @@
+# The `eloize-confidential` agent preset: a local-only, tool-less chat agent.
+#
+# Modelled on the shipped `minimal` preset. The persona is the COMPLETE system
+# prompt (`complete: true`), so no other prompt section can be added, and
+# runtime context is suppressed (`includeRuntimeContext: false`). No tool rows
+# are listed, so this agent's tool catalog is empty: the model can only answer,
+# never execute. Attachment text is admitted host-plane at file receipt and
+# reaches the model without any tool.
+#
+# The model route itself is host-plane (presets cannot own it); the
+# @eloize/dsh-confidential node half forces Ollama/Qwen3 for sessions whose
+# cwd is the Confidential folder. Compaction is absent from this composition,
+# so long chats never trigger a summary model call. Sessions are created with
+# this preset while blank (agentPresets.select) and renamed at creation, so no
+# title LLM ever runs.
+
+- id: persona
+  name: '@deepseek-ai/dsh-persona'
+  config:
+    complete: true
+    includeRuntimeContext: false
+    prefix: >-
+      You are Eloize Confidential, a private local assistant running entirely
+      on this machine. Nothing you read or write leaves this device. You have
+      no tools: answer in plain, concise text from the conversation and any
+      attached file content. Never reveal or summarise confidential material
+      outside this conversation.

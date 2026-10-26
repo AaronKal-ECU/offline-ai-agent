@@ -1,0 +1,73 @@
+# Qwen3 8B, Q6_K quantisation: the main local model (thinking on by default).
+#
+# Download the GGUF (e.g. Qwen3-8B-Q6_K.gguf from Hugging Face), put it next to
+# this file, then:
+#   ollama create Qwen3-8B-Q6_K -f Qwen3-8B-Q6_K.Modelfile
+#
+# The TEMPLATE is Qwen3's chat template (tool calling + thinking support).
+# num_ctx 32768 keeps the whole model and context inside 12 GB of VRAM.
+# Sampling follows Qwen's recommended settings for thinking mode.
+FROM ./Qwen3-8B-Q6_K.gguf
+TEMPLATE """{{- $lastUserIdx := -1 -}}
+{{- range $idx, $msg := .Messages -}}
+{{- if eq $msg.Role "user" }}{{ $lastUserIdx = $idx }}{{ end -}}
+{{- end }}
+{{- if or .System .Tools }}<|im_start|>system
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}
+
+# Tools
+
+You may call one or more functions to assist with the user query.
+
+You are provided with function signatures within <tools></tools> XML tags:
+<tools>
+{{- range .Tools }}
+{"type": "function", "function": {{ .Function }}}
+{{- end }}
+</tools>
+
+For each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:
+<tool_call>
+{"name": <function-name>, "arguments": <args-json-object>}
+</tool_call>
+{{- end }}<|im_end|>
+{{ end }}
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 -}}
+{{- if eq .Role "user" }}<|im_start|>user
+{{ .Content }}
+{{- if and $.IsThinkSet (eq $i $lastUserIdx) }}
+{{- if $.Think }} /think{{ else }} /no_think{{ end }}
+{{- end }}<|im_end|>
+{{ else if eq .Role "assistant" }}<|im_start|>assistant
+{{ if and $.IsThinkSet .Thinking (or $last (gt $i $lastUserIdx)) -}}
+<think>{{ .Thinking }}</think>
+{{ end -}}
+{{ if .Content }}{{ .Content }}
+{{- else if .ToolCalls }}<tool_call>
+{{ range .ToolCalls }}{"name": "{{ .Function.Name }}", "arguments": {{ .Function.Arguments }}}
+{{ end }}</tool_call>
+{{- end }}{{ if not $last }}<|im_end|>
+{{ end }}
+{{- else if eq .Role "tool" }}<|im_start|>user
+<tool_response>
+{{ .Content }}
+</tool_response><|im_end|>
+{{ end }}
+{{- if and (ne .Role "assistant") $last }}<|im_start|>assistant
+{{ if and $.IsThinkSet (not $.Think) -}}
+<think>
+
+</think>
+
+{{ end -}}
+{{ end }}
+{{- end }}"""
+PARAMETER num_ctx 32768
+PARAMETER stop <|im_start|>
+PARAMETER stop <|im_end|>
+PARAMETER temperature 0.6
+PARAMETER top_p 0.95
+PARAMETER top_k 20

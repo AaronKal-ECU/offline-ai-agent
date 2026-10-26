@@ -1,0 +1,68 @@
+# Qwen3 8B Q6_K, no-think variant: same weights, thinking switched off.
+#
+# `think` can't be set as a Modelfile PARAMETER (Ollama 0.34.2 rejects it), so
+# no-think is baked into the TEMPLATE instead: Qwen3's template with the two
+# `$.IsThinkSet` branches forced to "off". `/no_think` is always appended to the
+# last user message and the assistant always opens with an empty <think></think>
+# block, which is exactly what the `think: false` request option does
+# internally. Useful when a client (like DSH's OpenAI-compatible adapter) can't
+# send `think: false` per request.
+#
+# Build (after creating Qwen3-8B-Q6_K):
+#   ollama create Qwen3-8B-Q6_K-nothink -f Qwen3-8B-Q6_K-nothink.Modelfile
+#
+FROM Qwen3-8B-Q6_K
+TEMPLATE "{{- $lastUserIdx := -1 -}}
+{{- range $idx, $msg := .Messages -}}
+{{- if eq $msg.Role "user" }}{{ $lastUserIdx = $idx }}{{ end -}}
+{{- end }}
+{{- if or .System .Tools }}<|im_start|>system
+{{ if .System }}{{ .System }}
+{{- end }}
+{{- if .Tools }}
+
+# Tools
+
+You may call one or more functions to assist with the user query.
+
+You are provided with function signatures within <tools></tools> XML tags:
+<tools>
+{{- range .Tools }}
+{"type": "function", "function": {{ .Function }}}
+{{- end }}
+</tools>
+
+For each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:
+<tool_call>
+{"name": <function-name>, "arguments": <args-json-object>}
+</tool_call>
+{{- end }}<|im_end|>
+{{ end }}
+{{- range $i, $_ := .Messages }}
+{{- $last := eq (len (slice $.Messages $i)) 1 -}}
+{{- if eq .Role "user" }}<|im_start|>user
+{{ .Content }}
+{{- if eq $i $lastUserIdx }} /no_think{{ end }}<|im_end|>
+{{ else if eq .Role "assistant" }}<|im_start|>assistant
+{{ if and .Thinking (or $last (gt $i $lastUserIdx)) -}}
+<think>{{ .Thinking }}</think>
+{{ end -}}
+{{ if .Content }}{{ .Content }}
+{{- else if .ToolCalls }}<tool_call>
+{{ range .ToolCalls }}{"name": "{{ .Function.Name }}", "arguments": {{ .Function.Arguments }}}
+{{ end }}</tool_call>
+{{- end }}{{ if not $last }}<|im_end|>
+{{ end }}
+{{- else if eq .Role "tool" }}<|im_start|>user
+<tool_response>
+{{ .Content }}
+</tool_response><|im_end|>
+{{ end }}
+{{- if and (ne .Role "assistant") $last }}<|im_start|>assistant
+<think>
+
+</think>
+
+{{ end }}
+{{- end }}
+"

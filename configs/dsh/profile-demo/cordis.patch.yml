@@ -1,0 +1,60 @@
+# Your patch layer for this dsh profile, applied after every bundle layer:
+# a top-level YAML array of loader patch entries (id-targeted config
+# overrides, disables, and insert lists; `!!js` expressions allowed).
+#
+# == Eloize demo: STEP 1 + STEP 3 ACTIVE =====================================
+# Step 1 of the rollout is: logos, slogans, remove the Preview badge.
+# Step 3 of the rollout is: Confidential mode (@eloize/dsh-confidential).
+#
+# Active below:
+#   - ui-brand-official  DISABLED  (required: the two sidebar brand slots are
+#                                   single-kind, so the official occupant must
+#                                   stand down rather than be stacked over)
+#   - eloize-branding    ENABLED   (sidebar mark + wordmark, hero assistant
+#                                   badge, palette/type, tab title)
+#   - eloize-copy        ENABLED   (headline, subline, Preview removal)
+#   - eloize-shell       ENABLED   (fallback New Audit/New Chat buttons, the
+#                                   Upload transcript card, and the INERT
+#                                   Confidential placeholder row)
+#   - eloize-transcript  ENABLED   (upload pipeline; also the reusable entry
+#                                   the confidential plugin's upload calls)
+#   - eloize-confidential ENABLED  (live Confidential mode: toggle, dedicated
+#                                   folder, local-only chat, zero tools, slim
+#                                   prompt, purple look, in-mode upload)
+#   - eloize-trims       ENABLED   (demo-day UI trims: hides the chat box's "+"
+#                                   button, the access dropdown and the mode
+#                                   dropdown, in BOTH modes. UI ONLY - every
+#                                   plugin behind those controls keeps running,
+#                                   the permission preset stays Full access and
+#                                   each session keeps its own agent preset)
+#
+# Scope note: the copy plugin also carries the sidebar section renames
+# ("Projects" -> "Audits", "Ungrouped" -> "Chats").
+#
+# Switching a feature off = delete its row. Switching everything off =
+# restore the single line `[]`. With the confidential row removed, the shell
+# plugin's inert Confidential placeholder row is all that remains in the
+# sidebar footer.
+# ===========================================================================
+
+- id: ui-brand-official
+  disabled: true
+
+- insert:
+    - id: eloize-branding
+      name: '@eloize/dsh-branding'
+
+    - id: eloize-copy
+      name: '@eloize/dsh-copy'
+
+    - id: eloize-shell
+      name: '@eloize/dsh-shell'
+
+    - id: eloize-transcript
+      name: '@eloize/dsh-transcript'
+
+    - id: eloize-confidential
+      name: '@eloize/dsh-confidential'
+
+    - id: eloize-trims
+      name: '@eloize/dsh-trims'
