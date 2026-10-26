@@ -103,6 +103,19 @@ I built a branded, workflow-specific version of DSH during my internship at Eloi
 
 ---
 
+## Confidential mode: local-only chat
+
+![Confidential mode](docs/images/confidential-mode.png)
+
+Flip the switch and the assistant becomes **local model only**:
+- Every model request from a confidential session is **rewritten at the harness level** to Ollama/Qwen3. It's the last word on routing, so no other setting or plugin can send it to the cloud. If the check itself errors, the request fails rather than slipping through.
+- **Zero tools** and a slim system prompt: the model can only answer, never execute anything.
+- No background calls: no auto-titles, no summaries.
+
+**→ [How the custom harness is built](docs/custom-harness.md)**: profiles, the plugin layer, the six plugins, and how they were tested.
+
+---
+
 ## Transcript scrubber: strips client data from files on the local model
 
 ![Transcript scrubbed on the local model](docs/images/transcript-scrubber.png)
@@ -118,19 +131,6 @@ It's a multi-pass pipeline, because one LLM pass alone isn't reliable enough for
 5. **Save:** the clean `.md` lands in the audit's folder and opens beside the chat.
 
 Full breakdown with a before/after, and how to use it beyond transcripts: **→ [Client data stripper](docs/client-data-stripper.md)**
-
----
-
-## Confidential mode: local-only chat
-
-![Confidential mode](docs/images/confidential-mode.png)
-
-Flip the switch and the assistant becomes **local model only**:
-- Every model request from a confidential session is **rewritten at the harness level** to Ollama/Qwen3. It's the last word on routing, so no other setting or plugin can send it to the cloud. If the check itself errors, the request fails rather than slipping through.
-- **Zero tools** and a slim system prompt: the model can only answer, never execute anything.
-- No background calls: no auto-titles, no summaries.
-
-**→ [How the custom harness is built](docs/custom-harness.md)**: profiles, the plugin layer, the six plugins, and how they were tested.
 
 ---
 
