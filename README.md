@@ -160,6 +160,29 @@ A model on its own can only produce text. A **harness** is the code around it th
 
 ---
 
+## Videos and further learning
+
+**My demos**
+- [DeepSeek Harness in 20 seconds](https://youtu.be/lT6YhD8X6hU)
+- [Confidential mode](https://youtu.be/dJA3WOD5MPo)
+- [Local AI data scrubber](https://youtu.be/TaeJq977wuU)
+- [Full walkthrough of the custom assistant](https://www.youtube.com/watch?v=NwEOs_hetQo)
+- [Ideas for more tools to bolt onto the harness](https://www.youtube.com/watch?v=oSaomaeyFCY)
+
+**Understanding harnesses and DSH**
+- [You Don't Own Your AI. The Harness Does.](https://www.youtube.com/watch?v=k8jYOcQUB_A) by Manolo Remiddi
+- [DSH the AI Harness Where Everything Is a Plugin](https://www.youtube.com/watch?v=rvdnywaXZWU) by Manolo Remiddi
+- [Why DeepSeek Harness Just Became The Fastest Growing Github Repo EVER](https://www.youtube.com/watch?v=f51ICIoHcjY) by Chase AI
+- [DeepSeek Harness Just Changed AI Forever](https://www.youtube.com/watch?v=DTu4yvmc0Fc) by Better Stack
+
+**Setting it up**
+- [Unlimited Claude Code For Free (Runs On Your Computer)](https://www.youtube.com/watch?v=K8lVHiFnN2A&t=106s) by Sharbel A., installing Ollama from 1:46
+- [Ollama Can Run 45,000 Hugging Face Models (One Command)](https://www.youtube.com/watch?v=roSPp9LukPE) by CloudYeti
+- [Qwen 3.8 + DeepSeek Harness Is My New Free Claude Code](https://www.youtube.com/watch?v=N7Hkqznvc7I) by Leon van Zyl
+- [DeepSeek Harness Tutorial: Free & Paid Models with OpenRouter + Real Coding](https://www.youtube.com/watch?v=0tb33f1hJHA) by Sahand
+
+---
+
 ## About
 
 Built by **Aaron Kalaji**, a Software Engineering student at Edith Cowan University (Perth, WA) and founder of **Kaltec**. Passionate about engineering, fabrication and automation. For enquiries: kalteclabs@gmail.com
