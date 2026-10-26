@@ -117,7 +117,7 @@ It's a multi-pass pipeline, because one LLM pass alone isn't reliable enough for
 4. **Number backstop:** a regex replaces any 8+ digit run (ABNs, account and phone numbers the model missed) with `[ID]`, while leaving prices like `$1,420,000` alone.
 5. **Save:** the clean `.md` lands in the audit's folder and opens beside the chat.
 
-Full breakdown with a before/after on a synthetic transcript: **→ [Transcript scrubber](docs/transcript-scrubber.md)**
+Full breakdown with a before/after on a synthetic transcript: **→ [Transcript scrubber](docs/client-data-stripper.md)**
 
 ---
 
