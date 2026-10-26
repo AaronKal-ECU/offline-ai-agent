@@ -17,10 +17,7 @@ Download it from [ollama.com](https://ollama.com/download). It runs in the backg
 ollama --version
 ```
 
-New to Ollama? The [official docs](https://docs.ollama.com) cover installation, GPU support and troubleshooting.
-
-> [!TIP]
-> **New to Ollama?** From 1:46, [Unlimited Claude Code For Free (Runs On Your Computer)](https://www.youtube.com/watch?v=K8lVHiFnN2A&t=106s) by Sharbel A. shows installing Ollama and running a model locally.
+New to Ollama? The [official docs](https://docs.ollama.com) cover installation, GPU support and troubleshooting. If you'd rather watch, [Unlimited Claude Code For Free (Runs On Your Computer)](https://www.youtube.com/watch?v=K8lVHiFnN2A&t=106s) by Sharbel A. shows the install from 1:46.
 
 ## 2. Get a model
 
@@ -74,10 +71,7 @@ It prints a local URL and opens the UI in your browser. Your local models are in
 ▶ [See it in action: DeepSeek Harness in 20 seconds](https://youtu.be/lT6YhD8X6hU)
 
 > [!TIP]
-> **What is DeepSeek Harness?** Two quick overviews: [Why DeepSeek Harness Just Became The Fastest Growing Github Repo EVER](https://www.youtube.com/watch?v=f51ICIoHcjY) (Chase AI) and [DeepSeek Harness Just Changed AI Forever](https://www.youtube.com/watch?v=DTu4yvmc0Fc) (Better Stack).
->
 > **Hands-on setup guides I used to build this:**
-> - [DSH the AI Harness Where Everything Is a Plugin](https://www.youtube.com/watch?v=rvdnywaXZWU) by Manolo Remiddi, the best all-round explanation of DSH
 > - [Qwen 3.8 + DeepSeek Harness Is My New Free Claude Code](https://www.youtube.com/watch?v=N7Hkqznvc7I) by Leon van Zyl, for local Qwen models in DSH
 > - [DeepSeek Harness Tutorial: Free & Paid Models with OpenRouter + Real Coding](https://www.youtube.com/watch?v=0tb33f1hJHA) by Sahand, for mixing in cloud models
 
@@ -90,9 +84,6 @@ dsh --profile demo --port 3081
 ```
 
 That's how the custom audit assistant in this repo runs alongside my everyday instance. See [How the custom harness is built](custom-harness.md).
-
-> [!TIP]
-> For how profiles and plugins fit together, see [DSH the AI Harness Where Everything Is a Plugin](https://www.youtube.com/watch?v=rvdnywaXZWU) by Manolo Remiddi. For local Qwen models in DSH, see [Leon van Zyl's Qwen + DSH setup](https://www.youtube.com/watch?v=N7Hkqznvc7I).
 
 ## Versions this was built on
 

@@ -78,9 +78,6 @@ Because the override runs *after* the rest of the chain, no setting or other plu
 - **Temperature 0 and thinking off** for mechanical jobs like redaction: you want consistency, not creativity.
 - **Never trust one pass for anything safety-critical.** Back the model up with deterministic code (see the [transcript scrubber](client-data-stripper.md)).
 
-> [!TIP]
-> To see a full harness in action, [DSH the AI Harness Where Everything Is a Plugin](https://www.youtube.com/watch?v=rvdnywaXZWU) by Manolo Remiddi walks through DSH and its plugin system.
-
 ## Next
 
 → [How the custom harness is built](custom-harness.md)

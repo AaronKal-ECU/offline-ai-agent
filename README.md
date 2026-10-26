@@ -154,20 +154,11 @@ A model on its own can only produce text. A **harness** is the code around it th
 
 **→ [Harnesses and tools explained](docs/harnesses-and-tools.md)**
 
-
-> [!TIP]
-> Want the bigger picture on harnesses? [You Don't Own Your AI. The Harness Does.](https://www.youtube.com/watch?v=k8jYOcQUB_A) by Manolo Remiddi explains why the harness matters as much as the model, and [AI harness crash course](https://www.youtube.com/watch?v=2C_CefSQEAQ) by Google Cloud Tech is a good starting point.
-
 ---
 
 ## Videos and further learning
 
-**My demos**
-- [DeepSeek Harness in 20 seconds](https://youtu.be/lT6YhD8X6hU)
-- [Confidential mode](https://youtu.be/dJA3WOD5MPo)
-- [Local AI data scrubber](https://youtu.be/TaeJq977wuU)
-- [Full walkthrough of the custom assistant](https://www.youtube.com/watch?v=NwEOs_hetQo)
-- [Ideas for more tools to bolt onto the harness](https://www.youtube.com/watch?v=oSaomaeyFCY)
+My own demos are linked at the top. These are the videos I learned from.
 
 **Understanding harnesses and DSH**
 - [You Don't Own Your AI. The Harness Does.](https://www.youtube.com/watch?v=k8jYOcQUB_A) by Manolo Remiddi
