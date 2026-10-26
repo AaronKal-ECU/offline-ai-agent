@@ -63,7 +63,7 @@ Three layers, and you own all of them:
 
 
 > [!TIP]
-> **New to DeepSeek Harness?** [DeepSeek Harness Agentic AI Crash Course (Run Any AI Model)](https://www.youtube.com/watch?v=legYz3Hk2rQ) by Caleb Curry is the best plain-English walkthrough of what DSH is and how to use it.
+> **New to DeepSeek Harness?** [DSH the AI Harness Where Everything Is a Plugin](https://www.youtube.com/watch?v=rvdnywaXZWU) by Manolo Remiddi is the best plain-English explanation of what DSH is and how it works.
 
 ---
 
@@ -156,7 +156,7 @@ A model on its own can only produce text. A **harness** is the code around it th
 
 
 > [!TIP]
-> Want the bigger picture on harnesses? [AI harness crash course](https://www.youtube.com/watch?v=2C_CefSQEAQ) by Google Cloud Tech is a good starting point.
+> Want the bigger picture on harnesses? [You Don't Own Your AI. The Harness Does.](https://www.youtube.com/watch?v=k8jYOcQUB_A) by Manolo Remiddi explains why the harness matters as much as the model.
 
 ---
 
