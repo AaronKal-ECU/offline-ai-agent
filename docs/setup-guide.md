@@ -65,6 +65,8 @@ It prints a local URL and opens the UI in your browser. Your local models are in
 
 ![Stock DeepSeek Harness](images/dsh-stock.png)
 
+▶ [See it in action: DeepSeek Harness in 20 seconds](https://youtu.be/lT6YhD8X6hU)
+
 ## 4. Run a second, custom instance (optional)
 
 DSH **profiles** let you run a separate instance with its own plugins on its own port, sharing the same install:

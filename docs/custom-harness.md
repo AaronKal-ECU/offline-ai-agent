@@ -58,6 +58,8 @@ Each plugin has a **node half** (`lib/index.js`, runs in the harness) and a **br
 
 ![Confidential mode](images/confidential-mode.png)
 
+▶ [Watch confidential mode in action](https://youtu.be/dJA3WOD5MPo)
+
 One toggle in the sidebar switches the assistant into a purple, locked-down mode: **local model only, nothing leaves this machine.**
 
 How it's enforced, in the [node half](../plugins/dsh-confidential/lib/index.js) (no imports, so there's nothing external that can fail to load):

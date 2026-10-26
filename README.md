@@ -10,6 +10,8 @@ This repo is two things:
 1. **A getting-started guide to local AI:** what you need, and how to get a model running on your own PC with no cloud needed.
 2. **A brief overview of AI harnesses and building custom tools for AI to use**, using DeepSeek Harness to build a purpose-built AI assistant with its own custom tools.
 
+**Demos:** ▶ [DeepSeek Harness in 20 seconds](https://youtu.be/lT6YhD8X6hU) · ▶ [Confidential mode](https://youtu.be/dJA3WOD5MPo) · ▶ [Local AI data scrubber](https://youtu.be/TaeJq977wuU)
+
 ---
 
 ## Most businesses that want AI hit the same wall: you can't paste client data into a cloud chatbot.
@@ -57,7 +59,7 @@ Three layers, and you own all of them:
 
 ![Stock DeepSeek Harness answering a prompt](docs/images/dsh-demo.gif)
 
-*Stock DeepSeek Harness: one prompt, three tool calls, a written answer.*
+*Stock DeepSeek Harness: one prompt, three tool calls, a written answer. ▶ [Watch the clip](https://youtu.be/lT6YhD8X6hU)*
 
 ---
 
@@ -111,7 +113,7 @@ I built a branded, workflow-specific version of DSH during my internship at Eloi
 
 ![Confidential mode: switching to local-only and asking for live weather](docs/images/confidential-mode.gif)
 
-*Switching on confidential mode and asking for today's weather. With no tools and no internet access, the local model says it can't check, instead of making something up.*
+*Switching on confidential mode and asking for today's weather. With no tools and no internet access, the local model says it can't check, instead of making something up. ▶ [Watch the full clip](https://youtu.be/dJA3WOD5MPo)*
 
 Flip the switch and the assistant becomes **local model only**:
 - Every model request from a confidential session is **rewritten at the harness level** to Ollama/Qwen3. It's the last word on routing, so no other setting or plugin can send it to the cloud. If the check itself errors, the request fails rather than slipping through.
@@ -126,7 +128,7 @@ Flip the switch and the assistant becomes **local model only**:
 
 ![Uploading a transcript and getting the cleaned copy back](docs/images/scrubber-demo.gif)
 
-*Upload a transcript, the local model cleans it, and the redacted copy opens beside the chat.*
+*Upload a transcript, the local model cleans it, and the redacted copy opens beside the chat. ▶ [Watch the full demo](https://youtu.be/TaeJq977wuU)*
 
 Drop in a meeting transcript and the **local** model strips every identity out of it before anything else happens. Only the cleaned copy is saved and used. You get frontier cloud models working on your client's problems without ever handing them your client's data.
 

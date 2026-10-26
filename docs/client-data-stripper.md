@@ -10,7 +10,7 @@ Source: [`plugins/dsh-transcript`](../plugins/dsh-transcript/lib/client.js)
 
 ![Transcript cleaned and saved to the audit folder](images/scrubber-result.png)
 
-*A real run: the cleaned transcript opens on the right, with names replaced by `[NAME]`, and a notes summary is built from it on the left.*
+*A real run: the cleaned transcript opens on the right, with names replaced by `[NAME]`, and a notes summary is built from it on the left. ▶ [Watch the full demo](https://youtu.be/TaeJq977wuU)*
 
 ---
 
