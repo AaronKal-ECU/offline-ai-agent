@@ -10,6 +10,8 @@ This repo is two things:
 1. **A getting-started guide to local AI:** what you need, and how to get a model running on your own PC with no cloud needed.
 2. **A brief overview of AI harnesses and building custom tools for AI to use**, using DeepSeek Harness to build a purpose-built AI assistant with its own custom tools.
 
+**Start here:** want AI on your own PC? → [Setup guide](docs/setup-guide.md). Want to see what custom tools can do? → [The custom assistant](#a-custom-ai-assistant-built-on-deepseek-harness).
+
 **Demos:**  ▶ [Confidential mode](https://youtu.be/dJA3WOD5MPo) ▶ [Local AI data scrubber](https://youtu.be/TaeJq977wuU) ▶ [Full showcase of the custom AI and the problems it solves](https://www.youtube.com/watch?v=NwEOs_hetQo) ▶ [Other ideas for the custom AI](https://www.youtube.com/watch?v=oSaomaeyFCY) ▶ [DeepSeek Harness in 20 seconds](https://youtu.be/lT6YhD8X6hU) 
 
 ---
