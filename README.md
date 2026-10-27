@@ -12,7 +12,11 @@ This repo is two things:
 
 **Start here:** want AI on your own PC? → [Setup guide](docs/setup-guide.md). Want to see what custom tools can do? → [The custom assistant](#a-custom-ai-assistant-built-on-deepseek-harness).
 
-**Demos:**  ▶ [Confidential mode](https://youtu.be/dJA3WOD5MPo) ▶ [Local AI data scrubber](https://youtu.be/TaeJq977wuU) ▶ [Full showcase of the custom AI and the problems it solves](https://www.youtube.com/watch?v=NwEOs_hetQo) ▶ [Other ideas for the custom AI](https://www.youtube.com/watch?v=oSaomaeyFCY) ▶ [DeepSeek Harness in 20 seconds](https://youtu.be/lT6YhD8X6hU) 
+**Demos:**  ▶ [Confidential mode](https://youtu.be/dJA3WOD5MPo) ▶ [Local AI data scrubber](https://youtu.be/TaeJq977wuU) ▶ [Full showcase of the custom AI and the problems it solves](https://www.youtube.com/watch?v=NwEOs_hetQo) ▶ [Other ideas for the custom AI](https://www.youtube.com/watch?v=oSaomaeyFCY) ▶ [DeepSeek Harness in 20 seconds](https://youtu.be/lT6YhD8X6hU)
+
+![Confidential mode: switching to local-only and asking for live weather](docs/images/confidential-mode.gif)
+
+*Confidential mode: the assistant switches to the local model only and has no internet access, so asked for live weather, it says it can't check instead of making something up.*
 
 ---
 
@@ -117,9 +121,9 @@ I built a branded, workflow-specific version of DSH during my internship at Eloi
 
 ## Confidential mode: local-only chat
 
-![Confidential mode: switching to local-only and asking for live weather](docs/images/confidential-mode.gif)
+![Confidential mode: local model only](docs/images/confidential-mode.png)
 
-*Switching on confidential mode and asking for today's weather. With no tools and no internet access, the local model says it can't check, instead of making something up. ▶ [Watch the full clip](https://youtu.be/dJA3WOD5MPo)*
+*Confidential mode on: purple UI, local model only, no tools. ▶ [Watch the full clip](https://youtu.be/dJA3WOD5MPo)*
 
 Flip the switch and the assistant becomes **local model only**:
 - Every model request from a confidential session is **rewritten at the harness level** to Ollama/Qwen3. It's the last word on routing, so no other setting or plugin can send it to the cloud. If the check itself errors, the request fails rather than slipping through.
