@@ -75,6 +75,9 @@ Three layers, and you own all of them:
 
 ## The rig
 
+<details>
+<summary><b>Hardware, model choices and the two DSH instances</b></summary>
+
 | Component | Spec |
 |---|---|
 | GPU | NVIDIA RTX 3060, 12 GB VRAM |
@@ -91,9 +94,7 @@ This is last-generation hardware, on purpose. The model is sized to fit entirely
 - **Why Q6_K:** quality very close to the full-precision model, with VRAM headroom left for a 32K–40K token context.
 - **Why a no-think variant:** Qwen3 "thinks" before answering by default, which costs time. The no-think tag uses the same weights with thinking switched off in the prompt template, for fast, direct answers. See [`configs/ollama`](configs/ollama).
 
----
-
-## Two instances, one machine
+### Two instances, one machine
 
 | | Personal lab | Custom assistant (demo) |
 |---|---|---|
@@ -102,6 +103,8 @@ This is last-generation hardware, on purpose. The model is sized to fit entirely
 | Plugins | Stock DSH | Six custom plugins (branding, transcript scrubber, confidential mode…) |
 
 Both run from the same DSH install and share one session store, but each boots its own **profile**, so their plugin stacks never touch. A personal workspace and a client-facing assistant can live on the same PC.
+
+</details>
 
 **→ [Setup guide](docs/setup-guide.md)**: get a local model running and connected to DSH.
 
